@@ -8,8 +8,6 @@ Crea una aplicación React a partir de esta maqueta. Identifica qué datos del H
 
 ```json
 
-```
-
 [
 {
 id: 1,
@@ -42,8 +40,6 @@ alternativeText: "Churchs pointing at you",
 selected: true,
 },
 ];
-
-```
 
 ```
 
