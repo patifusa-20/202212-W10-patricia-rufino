@@ -1,4 +1,5 @@
 import { DataGentlemanType } from '../../../../core/types/gentleman';
+import './button.css';
 
 export function Button({
     item,

@@ -14,14 +14,8 @@ export function Gentleman({ item }: { item: DataGentlemanType }) {
     const getSelected = (selectedItem: DataGentlemanType) => {
         setSelectedItem(
             selectedItem.selected === false
-                ? {
-                      ...selectedItem,
-                      selected: true,
-                  }
-                : {
-                      ...selectedItem,
-                      selected: false,
-                  }
+                ? { ...selectedItem, selected: true }
+                : { ...selectedItem, selected: false }
         );
     };
 
