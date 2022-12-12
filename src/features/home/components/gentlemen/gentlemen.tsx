@@ -13,7 +13,10 @@ export function Gentlemen() {
             <main className="main">
                 <ul className="gentlemen">
                     {items.map((item: DataGentlemanType) => (
-                        <Gentleman item={item}></Gentleman>
+                        <Gentleman
+                            item={item}
+                            key={item.id.toString()}
+                        ></Gentleman>
                     ))}
                 </ul>
             </main>
