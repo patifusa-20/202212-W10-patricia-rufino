@@ -1,6 +1,9 @@
+import { gentlemenData } from '../../../../core/mocks/gentlemen.data';
+import { DataGentlemanType } from '../../../../core/types/gentleman';
 import { Gentleman } from '../gentleman/gentleman';
 
 export function Gentlemen() {
+    const items = gentlemenData;
     return (
         <>
             <section className="controls">
@@ -9,7 +12,12 @@ export function Gentlemen() {
             </section>
             <main className="main">
                 <ul className="gentlemen">
-                    <Gentleman></Gentleman>
+                    {items.map((item: DataGentlemanType) => (
+                        <Gentleman
+                            item={item}
+                            key={item.id.toString()}
+                        ></Gentleman>
+                    ))}
                 </ul>
             </main>
         </>
