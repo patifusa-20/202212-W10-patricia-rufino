@@ -9,7 +9,9 @@ export function Info({ item }: { item: DataGentlemanType }) {
                     src={'assets/img/' + item.picture}
                     alt={item.alternativeText}
                 />
-                <span className="gentleman__initial">F</span>
+                <span className="gentleman__initial">
+                    {item.picture[0].split('')[0].toUpperCase()}
+                </span>
             </div>
             <div className="gentleman__data-container">
                 <h2 className="gentleman__name">{item.name}</h2>
@@ -22,11 +24,11 @@ export function Info({ item }: { item: DataGentlemanType }) {
                     </li>
                     <li className="gentleman__data">
                         <span className="gentleman__data-label">Status:</span>{' '}
-                        RIP
+                        {item.status}
                     </li>
                     <li className="gentleman__data">
                         <span className="gentleman__data-label">Twitter:</span>{' '}
-                        Pending
+                        {item.twitter}
                     </li>
                 </ul>
             </div>

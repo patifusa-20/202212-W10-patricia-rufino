@@ -1,20 +1,14 @@
 import { DataGentlemanType } from '../../../../core/types/gentleman';
-import { gentlemenData } from '../../../../core/mocks/gentlemen.data';
 import { Button } from '../button/button';
 import { Info } from '../info/info';
 
-export function Gentleman() {
-    const items = gentlemenData;
+export function Gentleman({ item }: { item: DataGentlemanType }) {
     return (
         <>
-            {items.map((item: DataGentlemanType) => {
-                return (
-                    <li className="gentleman">
-                        <Info item={item}></Info>
-                        <Button></Button>
-                    </li>
-                );
-            })}
+            <li className={'gentleman' + (item.selected ? ' selected' : '')}>
+                <Info item={item}></Info>
+                <Button item={item}></Button>
+            </li>
         </>
     );
 }
