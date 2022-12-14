@@ -1,7 +1,7 @@
 import { DataGentlemanType } from '../../../../core/types/gentleman';
 import './button.css';
 
-export function Button({
+export function ButtonSelect({
     item,
     setSelected,
 }: {
@@ -20,8 +20,6 @@ export function Button({
                     handlerSelected(item);
                 }}
             ></i>
-
-            <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i>
         </>
     );
 }

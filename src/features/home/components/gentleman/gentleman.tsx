@@ -1,5 +1,5 @@
 import { DataGentlemanType } from '../../../../core/types/gentleman';
-import { Button } from '../button/button';
+import { ButtonSelect } from '../button/button.select';
 import { ButtonDelete } from '../button/button.delete';
 import { Info } from '../info/info';
 
@@ -21,7 +21,10 @@ export function Gentleman({
                 id={'item_' + item.id}
             >
                 <Info item={item}></Info>
-                <Button item={item} setSelected={setSelected}></Button>
+                <ButtonSelect
+                    item={item}
+                    setSelected={setSelected}
+                ></ButtonSelect>
                 <ButtonDelete
                     item={item}
                     setDeleted={setDeleted}
