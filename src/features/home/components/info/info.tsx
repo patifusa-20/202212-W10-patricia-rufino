@@ -30,10 +30,6 @@ export function Info({ item }: { item: DataGentlemanType }) {
                         <span className="gentleman__data-label">Twitter:</span>{' '}
                         {item.twitter}
                     </li>
-                    <li className="gentleman__data">
-                        <span className="gentleman__data-label">Selected:</span>{' '}
-                        {item.selected ? 'true' : 'false'}
-                    </li>
                 </ul>
             </div>
         </>
