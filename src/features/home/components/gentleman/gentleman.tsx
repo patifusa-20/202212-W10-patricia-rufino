@@ -13,8 +13,6 @@ export function Gentleman({
         <>
             <li
                 className={
-                    // Si es true, significa que hay que seleccionarlo
-                    // Si es false, significa que hay que deseleccionarlo
                     item.selected === false ? 'gentleman' : 'gentleman selected'
                 }
                 id={'item_' + item.id}
