@@ -7,7 +7,7 @@ import { ButtonSelectAll } from './gentlemen.button';
 export function Gentlemen() {
     const items = gentlemenData;
     const initialState = [...items];
-    const [updatedArray, setSelectedItem] = useState(initialState);
+    const [updatedArray, setItems] = useState(initialState);
 
     useEffect(() => {
         console.log(updatedArray);
@@ -24,7 +24,7 @@ export function Gentlemen() {
             return { ...isSelectedItem };
         }
 
-        setSelectedItem(
+        setItems(
             updatedArray.map((item) =>
                 item.id === selectedItem.id ? isSelected(item) : item
             )
@@ -32,10 +32,11 @@ export function Gentlemen() {
     };
 
     const getSelectAll = () => {
-        const allSelectedItems = updatedArray.map((item: DataGentlemanType) => {
-            return { ...item, selected: true };
-        });
-        return allSelectedItems;
+        setItems(
+            updatedArray.map((item: DataGentlemanType) => {
+                return { ...item, selected: true };
+            })
+        );
     };
 
     return (
