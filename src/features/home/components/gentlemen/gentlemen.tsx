@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { gentlemenData } from '../../../../core/mocks/gentlemen.data';
 import { DataGentlemanType } from '../../../../core/types/gentleman';
 import { Gentleman } from '../gentleman/gentleman';
-import { ButtonSelectAll } from './gentlemen.button';
+import { Controls } from '../controls/controls';
 
 export function Gentlemen() {
     const items = gentlemenData;
@@ -45,12 +45,10 @@ export function Gentlemen() {
 
     return (
         <>
-            <section className="controls">
-                <p className="info">
-                    {totalSelected.length} gentlemen pointing at you
-                </p>
-                <ButtonSelectAll setSelectAll={getSelectAll}></ButtonSelectAll>
-            </section>
+            <Controls
+                totalSelected={totalSelected}
+                setSelectAll={getSelectAll}
+            ></Controls>
             <main className="main">
                 <ul className="gentlemen">
                     {updatedArray.map((item: DataGentlemanType) => (

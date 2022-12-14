@@ -1,7 +1,8 @@
 import { DataGentlemanType } from '../../../../core/types/gentleman';
-import { ButtonSelect } from '../button/button.select';
-import { ButtonDelete } from '../button/button.delete';
+import { ButtonSelect } from '../buttons/button.select';
+import { ButtonDelete } from '../buttons/button.delete';
 import { Info } from '../info/info';
+import './gentleman.css';
 
 export function Gentleman({
     item,
