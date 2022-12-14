@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { gentlemenData } from '../../../../core/mocks/gentlemen.data';
 import { DataGentlemanType } from '../../../../core/types/gentleman';
 import { Gentleman } from '../gentleman/gentleman';
+import { ButtonSelectAll } from './gentlemen.button';
 
 export function Gentlemen() {
     const items = gentlemenData;
@@ -30,13 +31,20 @@ export function Gentlemen() {
         );
     };
 
+    const getSelectAll = () => {
+        const allSelectedItems = updatedArray.map((item: DataGentlemanType) => {
+            return { ...item, selected: true };
+        });
+        return allSelectedItems;
+    };
+
     return (
         <>
             <section className="controls">
                 <p className="info">
                     {totalSelected.length} gentlemen pointing at you
                 </p>
-                <button className="button button--select">Select all</button>
+                <ButtonSelectAll setSelectAll={getSelectAll}></ButtonSelectAll>
             </section>
             <main className="main">
                 <ul className="gentlemen">
