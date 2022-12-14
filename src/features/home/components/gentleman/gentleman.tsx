@@ -1,36 +1,26 @@
-import { useEffect, useState } from 'react';
 import { DataGentlemanType } from '../../../../core/types/gentleman';
 import { Button } from '../button/button';
 import { Info } from '../info/info';
 
-export function Gentleman({ item }: { item: DataGentlemanType }) {
-    const initialState = { ...item };
-    const [selectedItem, setSelectedItem] = useState(initialState);
-
-    useEffect(() => {
-        console.log(selectedItem);
-    }, [selectedItem]);
-
-    const getSelected = (selectedItem: DataGentlemanType) => {
-        setSelectedItem(
-            selectedItem.selected === false
-                ? { ...selectedItem, selected: true }
-                : { ...selectedItem, selected: false }
-        );
-    };
-
+export function Gentleman({
+    item,
+    setSelected,
+}: {
+    item: DataGentlemanType;
+    setSelected: (item: DataGentlemanType) => void;
+}) {
     return (
         <>
             <li
                 className={
-                    selectedItem.selected === false
-                        ? 'gentleman'
-                        : 'gentleman selected'
+                    // Si es true, significa que hay que seleccionarlo
+                    // Si es false, significa que hay que deseleccionarlo
+                    item.selected === false ? 'gentleman' : 'gentleman selected'
                 }
                 id={'item_' + item.id}
             >
                 <Info item={item}></Info>
-                <Button item={selectedItem} setSelected={getSelected}></Button>
+                <Button item={item} setSelected={setSelected}></Button>
             </li>
         </>
     );
