@@ -30,7 +30,3 @@ export const gentlemenData = [
         selected: true,
     },
 ].map((item) => ({ ...item }));
-
-// const initGentlemen = () => {
-//     return gentlemenData;
-// };
