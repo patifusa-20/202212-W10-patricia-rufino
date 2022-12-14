@@ -5,13 +5,14 @@ import { Gentleman } from '../gentleman/gentleman';
 
 export function Gentlemen() {
     const items = gentlemenData;
-
     const initialState = [...items];
     const [updatedArray, setSelectedItem] = useState(initialState);
 
     useEffect(() => {
         console.log(updatedArray);
     }, [updatedArray]);
+
+    const totalSelected = updatedArray.filter((item) => item.selected === true);
 
     const getSelected = (selectedItem: DataGentlemanType) => {
         function isSelected(item: DataGentlemanType) {
@@ -33,7 +34,7 @@ export function Gentlemen() {
         <>
             <section className="controls">
                 <p className="info">
-                    {/* {totalSelected.length} gentlemen pointing at you */}
+                    {totalSelected.length} gentlemen pointing at you
                 </p>
                 <button className="button button--select">Select all</button>
             </section>
