@@ -31,6 +31,10 @@ export function Gentlemen() {
         );
     };
 
+    const getDeleted = (selectedItem: DataGentlemanType) => {
+        setItems(updatedArray.filter((item) => item.id !== selectedItem.id));
+    };
+
     const getSelectAll = () => {
         setItems(
             updatedArray.map((item: DataGentlemanType) => {
@@ -54,6 +58,7 @@ export function Gentlemen() {
                             item={item}
                             key={item.id.toString()}
                             setSelected={getSelected}
+                            setDeleted={getDeleted}
                         ></Gentleman>
                     ))}
                 </ul>
