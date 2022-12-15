@@ -15,7 +15,9 @@
         "react-router-dom": "^6.4.5",
         "react-scripts": "5.0.1",
         "typescript": "^4.9.4",
-        "web-vitals": "^2.1.4"
+        "web-vitals": "^2.1.4",
+        "@babel/plugin-syntax-jsx": "^7.18.6",
+        "@babel/preset-react": "^7.18.6"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -65,9 +67,12 @@
             "last 1 safari version"
         ]
     },
+    "babel": {
+        "plugins": [
+            "@babel/plugin-syntax-jsx"
+        ]
+    },
     "devDependencies": {
-        "@babel/plugin-syntax-jsx": "^7.18.6",
-        "@babel/preset-react": "^7.18.6",
         "@typescript-eslint/eslint-plugin": "^5.46.0",
         "@typescript-eslint/parser": "^5.46.0",
         "eslint-config-prettier": "^8.5.0"
