@@ -5,6 +5,6 @@ import { Layout } from './layout';
 test('renders gentlemen word', () => {
     const getChildren = <section></section>;
     render(<Layout children={getChildren} />);
-    const linkElement = screen.getAllByText(/gentlemen/i);
-    expect(linkElement[0]).toBeInTheDocument();
+    const element = screen.getAllByText(/gentlemen/i);
+    expect(element[0]).toBeInTheDocument();
 });

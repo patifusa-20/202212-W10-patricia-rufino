@@ -4,6 +4,6 @@ import { Header } from './header';
 
 test('renders pointing word', () => {
     render(<Header />);
-    const linkElement = screen.getAllByText(/pointing/i);
-    expect(linkElement[0]).toBeInTheDocument();
+    const element = screen.getAllByText(/pointing/i);
+    expect(element[0]).toBeInTheDocument();
 });

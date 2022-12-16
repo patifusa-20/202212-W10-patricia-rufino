@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { gentlemenData } from '../../../../core/mocks/gentlemen.data';
+import { useState } from 'react';
+import { gentlemenData } from '../../../../core/model/gentlemen.data';
 import { DataGentlemanType } from '../../../../core/types/gentleman';
 import { Gentleman } from '../gentleman/gentleman';
 import { Controls } from '../controls/controls';
@@ -9,13 +9,9 @@ export function Gentlemen() {
     const initialState = [...items];
     const [updatedArray, setItems] = useState(initialState);
 
-    useEffect(() => {
-        console.log(updatedArray);
-    }, [updatedArray]);
-
     const totalSelected = updatedArray.filter((item) => item.selected === true);
 
-    const getSelected = (selectedItem: DataGentlemanType) => {
+    const toggleSelectStateOfGentleman = (selectedItem: DataGentlemanType) => {
         function isSelected(item: DataGentlemanType) {
             const isSelectedItem =
                 item.selected === false
@@ -31,11 +27,11 @@ export function Gentlemen() {
         );
     };
 
-    const getDeleted = (selectedItem: DataGentlemanType) => {
+    const deleteGentleman = (selectedItem: DataGentlemanType) => {
         setItems(updatedArray.filter((item) => item.id !== selectedItem.id));
     };
 
-    const getSelectAll = () => {
+    const selectAllSelectedGentlemen = () => {
         setItems(
             updatedArray.map((item: DataGentlemanType) => {
                 return { ...item, selected: true };
@@ -47,7 +43,7 @@ export function Gentlemen() {
         <>
             <Controls
                 totalSelected={totalSelected}
-                setSelectAll={getSelectAll}
+                selectAllSelectedGentlemen={selectAllSelectedGentlemen}
             ></Controls>
             <main className="main">
                 <ul className="gentlemen">
@@ -55,8 +51,10 @@ export function Gentlemen() {
                         <Gentleman
                             item={item}
                             key={item.id.toString()}
-                            setSelected={getSelected}
-                            setDeleted={getDeleted}
+                            toggleSelectStateOfGentleman={
+                                toggleSelectStateOfGentleman
+                            }
+                            deleteGentleman={deleteGentleman}
                         ></Gentleman>
                     ))}
                 </ul>

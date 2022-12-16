@@ -4,10 +4,10 @@ import './controls.css';
 
 export function Controls({
     totalSelected,
-    setSelectAll,
+    selectAllSelectedGentlemen,
 }: {
     totalSelected: Array<DataGentlemanType>;
-    setSelectAll: () => void;
+    selectAllSelectedGentlemen: () => void;
 }) {
     return (
         <>
@@ -15,7 +15,9 @@ export function Controls({
                 <p className="info">
                     {totalSelected.length} gentlemen pointing at you
                 </p>
-                <ButtonSelectAll setSelectAll={setSelectAll}></ButtonSelectAll>
+                <ButtonSelectAll
+                    selectAllSelectedGentlemen={selectAllSelectedGentlemen}
+                ></ButtonSelectAll>
             </section>
         </>
     );

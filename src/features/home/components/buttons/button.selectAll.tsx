@@ -1,10 +1,10 @@
 export function ButtonSelectAll({
-    setSelectAll,
+    selectAllSelectedGentlemen,
 }: {
-    setSelectAll: () => void;
+    selectAllSelectedGentlemen: () => void;
 }) {
     const handlerSelectAll = () => {
-        setSelectAll();
+        selectAllSelectedGentlemen();
     };
 
     return (

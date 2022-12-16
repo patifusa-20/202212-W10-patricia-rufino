@@ -3,13 +3,13 @@ import './button.css';
 
 export function ButtonDelete({
     item,
-    setDeleted,
+    deleteGentleman,
 }: {
     item: DataGentlemanType;
-    setDeleted: (item: DataGentlemanType) => void;
+    deleteGentleman: (item: DataGentlemanType) => void;
 }) {
     const handlerDelete = (item: DataGentlemanType) => {
-        setDeleted(item);
+        deleteGentleman(item);
     };
 
     return (
