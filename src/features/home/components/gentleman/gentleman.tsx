@@ -6,12 +6,12 @@ import './gentleman.css';
 
 export function Gentleman({
     item,
-    setSelected,
-    setDeleted,
+    toggleSelectStateOfGentleman,
+    deleteGentleman,
 }: {
     item: DataGentlemanType;
-    setSelected: (item: DataGentlemanType) => void;
-    setDeleted: (item: DataGentlemanType) => void;
+    toggleSelectStateOfGentleman: (item: DataGentlemanType) => void;
+    deleteGentleman: (item: DataGentlemanType) => void;
 }) {
     return (
         <>
@@ -24,11 +24,11 @@ export function Gentleman({
                 <Info item={item}></Info>
                 <ButtonSelect
                     item={item}
-                    setSelected={setSelected}
+                    toggleSelectStateOfGentleman={toggleSelectStateOfGentleman}
                 ></ButtonSelect>
                 <ButtonDelete
                     item={item}
-                    setDeleted={setDeleted}
+                    deleteGentleman={deleteGentleman}
                 ></ButtonDelete>
             </li>
         </>

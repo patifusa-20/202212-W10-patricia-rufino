@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Info } from './info';
-import { gentlemenData } from '../../../../core/mocks/gentlemen.data';
+import { gentlemenData } from '../../../../core/model/gentlemen.data';
 
 test('renders Osbourne word', () => {
     const item = gentlemenData[0];

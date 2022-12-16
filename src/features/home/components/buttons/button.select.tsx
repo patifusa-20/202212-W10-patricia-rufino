@@ -3,13 +3,13 @@ import './button.css';
 
 export function ButtonSelect({
     item,
-    setSelected,
+    toggleSelectStateOfGentleman,
 }: {
     item: DataGentlemanType;
-    setSelected: (item: DataGentlemanType) => void;
+    toggleSelectStateOfGentleman: (item: DataGentlemanType) => void;
 }) {
     const handlerSelected = (item: DataGentlemanType) => {
-        setSelected(item);
+        toggleSelectStateOfGentleman(item);
     };
 
     return (
