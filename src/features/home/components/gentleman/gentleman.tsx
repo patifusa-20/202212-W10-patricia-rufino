@@ -1,8 +1,7 @@
 import { DataGentlemanType } from '../../../../core/types/gentleman';
-import { ButtonSelect } from '../buttons/button.select';
-import { ButtonDelete } from '../buttons/button.delete';
 import { Info } from '../info/info';
 import './gentleman.css';
+import { Button } from '../../../../core/components/button/button';
 
 export function Gentleman({
     item,
@@ -22,14 +21,16 @@ export function Gentleman({
                 id={'item_' + item.id}
             >
                 <Info item={item}></Info>
-                <ButtonSelect
+                <Button
                     item={item}
-                    toggleSelectStateOfGentleman={toggleSelectStateOfGentleman}
-                ></ButtonSelect>
-                <ButtonDelete
+                    actionButtonGentleman={deleteGentleman}
+                    classBtn={`gentleman__icon--delete fa-times`}
+                ></Button>
+                <Button
                     item={item}
-                    deleteGentleman={deleteGentleman}
-                ></ButtonDelete>
+                    actionButtonGentleman={toggleSelectStateOfGentleman}
+                    classBtn={`fa-check`}
+                ></Button>
             </li>
         </>
     );
